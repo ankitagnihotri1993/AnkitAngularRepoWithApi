@@ -1,0 +1,55 @@
+<form class="emp-form" #Employeeform="ngForm"(ngSubmit)="onSubmit(Employeeform)">
+    <input type="hidden" name="empid" #empid="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.empid">
+  <div class="form-row">
+    <div class="form-gruop col-md-6">
+      <input class="form-control" name="FirstName" #FirstName="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.firstname" placeholder="FirstName" required>
+    <div class="validation error"*ngIf="FirstName.invalid && FirstName.touched">please enter your FirstName</div>
+    </div>
+    <div class="form-gruop col-md-6">
+      <input class="form-control" name="LastName" #LastName="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.lastname" placeholder="LastName" required>
+      <div class="validation error"*ngIf="LastName.invalid && LastName.touched"> please enter your LastName</div>
+
+    </div>
+  </div>
+  <div class="form-group">
+    <input class="form-control" name="Email" #Email="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.email" placeholder="Email" required>
+    <div class="validation error"*ngIf="Email.invalid && Email.touched"> please enter your Email address</div>
+  </div>
+  <div class="form-row">
+      <div class="form-gruop col-md-6">
+        <input class="form-control" type="password" name="Password" #Password="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.password" placeholder="Password" required>
+      <div class="validation error"*ngIf="Password.invalid && Password.touched">please enter your Password</div>
+      </div>
+      <!-- <div class="form-gruop col-md-6">
+        <input class="form-control" type="password" name="ConfirmPassword"  required>
+        <div class="validation error"*ngIf="ConfirmPassword.invalid && ConfirmPassword.touched"> please confirm Password</div>
+  
+      </div> -->
+    </div>
+  <div class="form-row">
+    <div class="form-gruop col-md-6">
+      <input class="form-control" name="empcode" #empcode="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.empcode" placeholder="Empcode">
+    </div>
+    <div class="form-gruop col-md-6">
+      <input class="form-control" name="Designation" #Designation="ngModel" [(ngModel)]="employeeservice.SelectedEmployee.designation" placeholder="Designation">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-gruop col-md-8">
+    <button [disabled]="!Employeeform.valid"  id="btn"  type="submit" class="btn btn-lg-btn-block btn-info">Save</button>
+    
+    </div>
+    <div class="form-gruop col-md-4">
+      <button type="button" id="btnsubmit" class="btn btn-lg-btn-block btn-secondary"(click)=resetForm(Employeeform) >Reset</button> 
+    </div>
+  </div>
+</form>
+<!-- <form class="emp-form" #Employeeform="ngForm"(ngSubmit)="onSubmit(Employeeform)">
+<table>
+  <tr><td>FirstName</td> <td><input type="text" id="txtname" ></td></tr>
+  <tr><td>LastName</td> <td><input type="text" id="txtlname" ></td></tr>
+  <tr><td>empcode</td> <td><input type="text" id="txtcode" ></td></tr>
+  <tr><td>Designation</td> <td><input type="text" id="txtdesig" ></td></tr>
+  <button [disabled]="!Employeeform.valid" id="btn" type="submit" class="btn btn-lg-btn-block btn-info">Submit</button> 
+</table>
+</form> -->

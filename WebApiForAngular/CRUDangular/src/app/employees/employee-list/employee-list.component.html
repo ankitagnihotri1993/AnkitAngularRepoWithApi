@@ -1,0 +1,38 @@
+<!-- <table class="table table-sm table-hover">
+    <tr *ngFor="let employee of employeeservice.employeeList">
+<td>{{employee.firstname}} - {{employee.lastname}}</td>
+<td>{{employee.empcode}}</td>
+<td>{{employee.designation}}</td>
+<td><a class="btn" (click)=showforedit(employee)>
+  <i class="fa fa-pencil-square-o"></i>
+</a>
+<a class="btn text-danger" (click)=onDelete(employee.empid)>
+  <i class="fa fa-trash-o"></i>
+</a></td>
+  </tr>
+</table> -->
+
+<table border="2" class="table table-sm table-hover">
+<tr  style="color:rgb(212, 0, 255);">
+  <th>FirstName</th>
+  <th>LastName</th>
+  <th>Email</th>
+  <th>EmpCode</th>
+  <th>Designation</th>
+  <th>Edit</th>
+  <th>Delete</th>
+</tr>
+<tr *ngFor="let employee of employeeservice.employeeList" style="color:rgb(255, 145, 0);" >
+<td>{{employee.firstname}}</td>
+<td>{{employee.lastname}}</td>
+<td>{{employee.email}}</td>
+<td>{{employee.empcode}}</td>
+<td>{{employee.designation}}</td>
+<td><a class="btn" (click)=showforedit(employee) >
+    <i class="fa fa-pencil-square-o"></i>
+  </a></td>
+  <td><a class="btn text-danger" (click)=onDelete(employee.empid)>
+      <i class="fa fa-trash-o"></i>
+    </a></td>
+</tr>
+</table>
